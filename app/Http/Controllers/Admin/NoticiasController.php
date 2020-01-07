@@ -14,7 +14,12 @@ class NoticiasController extends Controller
      */
     public function index()
     {
-        return view('admin.noticias.index');
+        $listaMigalhas = json_encode([
+            ["titulo"=>"Home","url"=>route('home')],
+            ["titulo"=>"Lista de Compras","url"=>""]
+        ]);
+
+        return view('admin.noticias.index',compact('listaMigalhas'));
     }
 
     /**
